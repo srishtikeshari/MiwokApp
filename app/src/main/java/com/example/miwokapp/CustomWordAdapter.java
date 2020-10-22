@@ -1,10 +1,12 @@
 package com.example.miwokapp;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -44,6 +46,7 @@ public class CustomWordAdapter extends ArrayAdapter<Word> {
         {
             word_image.setVisibility(View.GONE);
         }
+        MediaPlayer player = MediaPlayer.create(getContext(), currentWord.getSongResourceId());
         View textContainer = (View)listItemView.findViewById(R.id.textContainer);
         int color = ContextCompat.getColor(getContext(), colorResource);
         textContainer.setBackgroundColor(color);

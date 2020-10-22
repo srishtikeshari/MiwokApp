@@ -1,6 +1,9 @@
 package com.example.miwokapp;
 
 import android.content.Context;
+import android.media.Image;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class Word {
 
@@ -8,14 +11,17 @@ public class Word {
     private String english;
     public final static int NO_IMAGE = -1;
     private int imageResourceId = NO_IMAGE;
-    public Word(String miwok, String english, int imageResourceId){
+    private int songResourceId;
+    public Word(String miwok, String english, int imageResourceId, int songResourceId){
             this.miwok = miwok;
             this.english = english;
             this.imageResourceId = imageResourceId;
+            this.songResourceId = songResourceId;
     }
-    public Word(String miwok, String english){
+    public Word(String miwok, String english, int songResourceId){
         this.miwok = miwok;
         this.english = english;
+        this.songResourceId = songResourceId;
     }
     public String getMiwok()
     {
@@ -28,6 +34,10 @@ public class Word {
     public int getImageResourceId()
     {
         return imageResourceId;
+    }
+    public int getSongResourceId()
+    {
+        return songResourceId;
     }
     public boolean hasImage()
     {
